@@ -1,0 +1,54 @@
+<map>
+	<name>Yaschas Massif</name>
+	<author>Rissole</author>
+    <intro>
+You are Hopu. You have to find Lighto-san in the Massif.
+She could be anywhere! You better get looking. Watch out for gob.
+	</intro>
+
+	<object pickUp="true">
+		<name>Marble</name>
+		<desc>A marble. Round, smooth, shiny.</desc>
+		<OnInspect>
+			print("Inspectin' a marble, from Lua");
+			print("Currently have: n marbles"); --(n = number of marbles)
+		</OnInspect>
+	</object>
+
+    <room start="true">
+		<name>Fringe of the Steppe</name>
+        <intro>
+You look out from the fringe of the Archelyte Steppe down into the beginning of the Massif track.
+North is a track deeper into the Massif, South leads deeper into the Steppe.
+		</intro>
+		<object pickUp="true">
+			<name>Nue</name>
+			<desc>Hope's ultimate weapon, it should always be with him.</desc>
+			<OnPickUp>
+				print("Gettin' Nue, from Lua.");
+			</OnPickUp>
+		</object>
+		<object name="Marble" />
+		<object name="Marble" />
+		<dir name="north">Massif Track</dir>
+		<dir name="south">Archelyte Steppe</dir>
+    </room>
+	
+	<room>
+		<name>Massif Track</name>
+		<intro>You enter the winding path through the Massif.</intro>
+		<dir name="south">Fringe of the Steppe</dir>
+		<OnLeave>
+			print("run awaaaaaay");
+		</OnLeave>
+	</room>
+	
+	<room end="true">
+		<name>Archelyte Steppe</name>
+		<intro>WATCH OUT A LONG GUI!!!</intro>
+		<OnEnter>
+			print("You are crushed by a Long Gui.");
+			--(end game)
+		</OnEnter>
+	</room>
+</map>
