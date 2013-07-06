@@ -6,3 +6,5 @@ Another key planned feature is "joining maps". That is to say, one map can have 
 
 # Dependencies
 rapidxml library. Used version 1.13.
+
+*Project created 10 June 2012*
